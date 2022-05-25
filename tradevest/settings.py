@@ -44,12 +44,13 @@ INSTALLED_APPS = [
     'tier3',
     'tier4',
     'mainpool',
-     'phonenumber_field',
+    'phonenumber_field',
      
      
     
 ]
 
+#Appname.ModelName
 AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
