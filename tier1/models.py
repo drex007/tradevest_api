@@ -28,10 +28,13 @@ class TierOne(models.Model):
     date_of_maturity = models.CharField(max_length=50, blank=True, null=True)
     status = models.BooleanField(default=False)
 
+    # Overide save mthod
     def save(self, *args, **kwargs):
         total = self.roi + (self.amount_invested)
         if self.status == True and self.earnings < total:
-            if self.date_confirmed == None:
+            if (
+                self.date_confirmed == None
+            ):  # Auto update date of maturity and time of investment
                 date = timezone.now()
                 self.date_confirmed = pd.to_datetime(date).date()
 

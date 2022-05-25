@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from phonenumber_field.modelfields import PhoneNumberField
+import pandas as pd
 
 # Create your models here.
 User = settings.AUTH_USER_MODEL
